@@ -1,54 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Catálogo de Produtos</title>
-</head>
-<body>
-    <h1>Catálogo de Produtos</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Catálogo de Produtos</title>
+    </head>
+    <body>
+        <h1>Catálogo de Produtos</h1>
+        <input type="radio" name="produto" id="produto1" />
+        <input type="radio" name="produto" id="produto2" />
+        <input type="radio" name="produto" id="produto3" />
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>FOTO</th>
+                    <th>ID</th>
+                    <th>DESCRIÇÂO</th>
+                    <th>QNTD ESTOQUE</th>
+                    <th>PREÇO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="produto1">
+                            <input
+                                type="radio"
+                                name="produto_selecao"
+                                id="produto1"
+                            />
+                            <span>Ver Mais</span>
+                        </label>
+                    </td>
+                    <td>
+                        <img
+                            src="https://a-static.mlcdn.com.br/800x560/mouse-laser-com-fio-ms3220-dell/dell/570abfh/02136c09a92094e0c73a6d5cab88c4fe.jpeg"
+                            alt=""
+                        />
+                    </td>
+                    <td>1</td>
+                    <td>Mouse Laser com Fio Dell</td>
+                    <td>5</td>
+                    <td>R$179,00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="produto2">
+                            <input
+                                type="radio"
+                                name="produto_selecao"
+                                id="produto2"
+                            />
+                            <span>Ver Mais</span>
+                        </label>
+                    </td>
+                    <td>
+                        <img
+                            src="https://th.bing.com/th/id/OIP.ajfLlmINlMVbJkhVcaBgTgAAAA?rs=1&pid=ImgDetMain"
+                            alt=""
+                        />
+                    </td>
+                    <td>2</td>
+                    <td>Mouse Bluetooth Dell</td>
+                    <td>6</td>
+                    <td>R$338,00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="produto3">
+                            <input
+                                type="radio"
+                                name="produto_selecao"
+                                id="produto3"
+                            />
+                            <span>Ver Mais</span>
+                        </label>
+                    </td>
+                    <td>
+                        <img
+                            src="https://img.kalunga.com.br/fotosdeprodutos/442886z.jpg?_gl=1*1esc0sz*_gcl_au*MTU4NzU2NjE4OS4xNzQwNTMwNTM3"
+                            alt=""
+                        />
+                    </td>
+                    <td>3</td>
+                    <td>Mouse óptico USB preto 100</td>
+                    <td>3</td>
+                    <td>R$48,00</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Descrição</h2>
+        <h3>Características do produto</h3>
+        <div id="desc1" class="descricao">
+            <h3>Características do Mouse Laser com Fio Dell</h3>
+            <ul>
+                <li>Sensor óptico preciso com 1.600 DPI</li>
+                <li>Conexão USB com cabo de 1,5m</li>
+                <li>Design ambidestro</li>
+            </ul>
+            <h3>Avaliação do Produto</h3>
+            <p>Patrícia Gomes: <blockquote>Material resistente e bem acabado.</blockquote></p>
+            <p>Eduardo Silva: <blockquote>Melhor compra que fiz esse ano!</blockquote></p>
+            <p>Camila Rocha: <blockquote>Já indiquei para meus amigos.</blockquote></p>
+        </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>FOTO</th>
-                <th>ID</th>
-                <th>DESCRIÇÂO</th>
-                <th>QNTD ESTOQUE</th>
-                <th>PREÇO</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="radio" name="produto" value="1"></td>
-                <td><img src="https://a-static.mlcdn.com.br/800x560/mouse-laser-com-fio-ms3220-dell/dell/570abfh/02136c09a92094e0c73a6d5cab88c4fe.jpeg" alt=""></td>
-                <td>1</td>
-                <td>Mouse Laser com Fio Dell</td>
-                <td>5</td>
-                <td>R$179,00</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="produto" value="2"></td>
-                <td><img src="https://th.bing.com/th/id/OIP.ajfLlmINlMVbJkhVcaBgTgAAAA?rs=1&pid=ImgDetMain" alt=""></td>
-                <td>2</td>
-                <td>Mouse Bluetooth Dell</td>
-                <td>6</td>
-                <td>R$338,00</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="produto" value="3"></td>
-                <td><img src="https://img.kalunga.com.br/fotosdeprodutos/442886z.jpg?_gl=1*1esc0sz*_gcl_au*MTU4NzU2NjE4OS4xNzQwNTMwNTM3" alt=""></td>
-                <td>3</td>
-                <td>Mouse óptico usb preto 100</td>
-                <td>3</td>
-                <td>R$48,00</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2>Descrição</h2>
-    <h3>Características do produto</h3>
-    
-</body>
+        <div id="desc2" class="descricao">
+            <h3>Características do Mouse Bluetooth Dell</h3>
+            <ul>
+                <li>Conexão sem fio via Bluetooth</li>
+                <li>Alta precisão com 2.400 DPI</li>
+                <li>Bateria de longa duração</li>
+            </ul>
+            <h3>Avaliação do Produto</h3>
+            <p>João Mendes: <blockquote>Produto superou minhas expectativas.</blockquote></p>
+            <p>Fernanda Lima: <blockquote>Funciona perfeitamente, valeu a pena.</blockquote></p>
+            <p>Ricardo Alves: <blockquote>Atendimento nota 10, muito satisfeito.</blockquote></p>
+        </div>
+
+        <div id="desc3" class="descricao">
+            <h3>Características do Mouse óptico USB preto 100</h3>
+            <ul>
+                <li>Conexão USB simples</li>
+                <li>Sensor de 1.200 DPI</li>
+                <li>Três botões integrados</li>
+            </ul>
+            <h3>Avaliação do produto</h3>
+            <p>Maria Oliveira: <blockquote>Ótimo produto, adorei!</blockquote></p>
+            <p>Carlos Souza: <blockquote>Chegou antes do prazo, muito bom.</blockquote></p>
+            <p>Ana Pereira: <blockquote>Qualidade excelente, recomendo!</blockquote></p>
+        </div>
+
+        
+    </body>
 </html>
