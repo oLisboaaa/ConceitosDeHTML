@@ -1,0 +1,32 @@
+body {
+    font-family: Arial;
+    padding: 50px 200px;
+    background-color: #d2b48c;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: "Lucida Sans", sans-serif;
+    transition: background-color 0.3s;
+}
+h1:hover {
+    background-color: black;
+}
+
+p {
+    text-indent: 20px;
+}
+
+.list-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+ol li {
+    text-align: justify;
+    margin-bottom: 10px;
+}
