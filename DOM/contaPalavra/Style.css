@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+    }
+
+body{
+    position: relative;
+    background-color: white;
+    width: 80%;
+    height: 90vh;
+    margin: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 2.25rem;
+    border: 1px black solid;
+    border-radius: 1% / 1.5%;
+    line-height: 1.75rem;
+}
