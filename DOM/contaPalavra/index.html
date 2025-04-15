@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <textarea
+            id="texto"
+            rows="5"
+            cols="40"
+            placeholder="Digite seu texto aqui..."
+        ></textarea
+        ><br />
+        <button onclick="contarPalavras()">Contar Palavras</button>
+        <p>Total de palavras: <span id="totalPalavras">0</span></p>
+
+        <script>
+            function contarPalavras() {
+                const texto = document.getElementById("texto").value.trim();
+                const palavras = texto === "" ? [] : texto.split(/\s+/);
+                document.getElementById("totalPalavras").textContent =
+                    palavras.length;
+            }
+        </script>
+    </body>
+</html>

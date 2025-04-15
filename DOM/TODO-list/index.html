@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <input type="text" id="tarefaInput" placeholder="Digite uma tarefa" />
+        <button onclick="adicionarTarefa()">Adicionar</button>
+        <ul id="listaTarefas"></ul>
+
+        <script>
+            function adicionarTarefa() {
+                const texto = document.getElementById("tarefaInput").value;
+                if (texto.trim() === "") return;
+
+                const novaTarefa = document.createElement("li");
+                novaTarefa.textContent = texto;
+
+                document.getElementById("listaTarefas").appendChild(novaTarefa);
+                document.getElementById("tarefaInput").value = "";
+            }
+        </script>
+    </body>
+</html>
