@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Funcionário</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 0 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:read-only {
+            background-color: #f0f0f0;
+            color: #555;
+        }
+
+        .submit-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+
+        sub {
+            position: relative;
+            opacity: 50%;
+            color: red;
+            float: right;
+
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cadastro de Funcionário</h1>
+        <form action="https://681158503ac96f7119a447e1.mockapi.io/funcionarios" method="post" id="formCadastro">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <div class="form-group">
+                    <label for="nome">Nome*:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail*:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF*:</label>
+                    <input type="text" id="cpf" name="cpf" required>
+                </div>
+                <div class="form-group">
+                    <label for="rg">RG*:</label>
+                    <input type="text" id="rg" name="rg">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Cargo</legend>
+                <div class="form-group">
+                    <label for="cargo">Nome:</label>
+                    <select id="cargo" name="cargo" required>
+                        <option value="">Selecione um cargo*</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="salario">Salário:</label>
+                    <input type="text" id="salario" name="salario" readonly>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Setor</legend>
+                <div class="form-group">
+                    <label for="setor">Nome:</label>
+                    <select id="setor" name="setor" required>
+                        <option value="">Selecione um setor*</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sigla">Sigla:</label>
+                    <input type="text" id="sigla" name="sigla" readonly>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Convênio</legend>
+                <div class="form-group">
+                    <label for="convenio">Nome:</label>
+                    <select id="convenio" name="convenio">
+                        <option value="">Selecione um convênio</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="valorTitular">Valor para o titular:</label>
+                    <input type="text" id="valorTitular" name="valorTitular" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="valorDependente">Valor para o dependente:</label>
+                    <input type="text" id="valorDependente" name="valorDependente" readonly>
+                </div>
+
+                <p><sub>Campos com * são de preenchimento obrigatórios</sub></p>
+            </fieldset>
+
+            <button type="submit" class="submit-btn">Cadastrar Funcionário</button>
+        </form>
+    </div>
+
+    <script>
+        // Dados pré-definidos
+        const setores = [
+            { id: 1, nome: "Tecnologia da Informação", sigla: "TI" },
+            { id: 2, nome: "Recursos Humanos", sigla: "RH" },
+            { id: 3, nome: "Financeiro", sigla: "FI" },
+            { id: 4, nome: "Marketing e Vendas", sigla: "MK" },
+            { id: 5, nome: "Produção e Operações", sigla: "PO" },
+        ];
+
+        const cargos = [
+            { id: 1, nome: "Analista de Sistemas", salário: "8500" },
+            { id: 2, nome: "Assistente Administrativo", salário: "2500" },
+            { id: 3, nome: "Secretário", salário: "4300" },
+            { id: 4, nome: "Gerente de Vendas", salário: "6500" },
+            { id: 5, nome: "Analista de Marketing", salário: "4500" },
+        ];
+
+        const convenios = [
+            {
+                id: 1,
+                nome: "UNIMED",
+                valor: { titular: 1500, dependente: 750 },
+            },
+            {
+                id: 2,
+                nome: "Intermédica",
+                valor: { titular: 1400, dependente: 850 },
+            },
+        ];
+
+        // Preencher selects com os dados
+        document.addEventListener('DOMContentLoaded', function () {
+            const cargoSelect = document.getElementById('cargo');
+            const setorSelect = document.getElementById('setor');
+            const convenioSelect = document.getElementById('convenio');
+
+            // Preencher cargos
+            cargos.forEach(cargo => {
+                const option = document.createElement('option');
+                option.value = cargo.id;
+                option.textContent = cargo.nome;
+                cargoSelect.appendChild(option);
+            });
+
+            // Preencher setores
+            setores.forEach(setor => {
+                const option = document.createElement('option');
+                option.value = setor.id;
+                option.textContent = setor.nome;
+                setorSelect.appendChild(option);
+            });
+
+            // Preencher convênios
+            convenios.forEach(convenio => {
+                const option = document.createElement('option');
+                option.value = convenio.id;
+                option.textContent = convenio.nome;
+                convenioSelect.appendChild(option);
+            });
+
+            // Event listeners para preenchimento automático
+            cargoSelect.addEventListener('change', function () {
+                const selectedId = parseInt(this.value);
+                const selectedCargo = cargos.find(c => c.id === selectedId);
+                document.getElementById('salario').value = selectedCargo ? selectedCargo.salário : '';
+            });
+
+            setorSelect.addEventListener('change', function () {
+                const selectedId = parseInt(this.value);
+                const selectedSetor = setores.find(s => s.id === selectedId);
+                document.getElementById('sigla').value = selectedSetor ? selectedSetor.sigla : '';
+            });
+
+            convenioSelect.addEventListener('change', function () {
+                const selectedId = parseInt(this.value);
+                const selectedConvenio = convenios.find(c => c.id === selectedId);
+                document.getElementById('valorTitular').value = selectedConvenio ? selectedConvenio.valor.titular : '';
+                document.getElementById('valorDependente').value = selectedConvenio ? selectedConvenio.valor.dependente : '';
+            });
+
+            // Envio do formulário
+            document.getElementById('formCadastro').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Validação básica
+                if (!document.getElementById('nome').value ||
+                    !document.getElementById('email').value ||
+                    !document.getElementById('cpf').value) {
+                    alert('Por favor, preencha os campos obrigatórios (Nome, E-mail e CPF)');
+                    return;
+                }
+
+                // Coletar dados do formulário
+                const formData = {
+                    nome: document.getElementById('nome').value,
+                    telefone: document.getElementById('telefone').value,
+                    email: document.getElementById('email').value,
+                    cpf: document.getElementById('cpf').value,
+                    rg: document.getElementById('rg').value,
+                    cargo: {
+                        id: document.getElementById('cargo').value,
+                        nome: document.getElementById('cargo').options[document.getElementById('cargo').selectedIndex].text,
+                        salario: document.getElementById('salario').value
+                    },
+                    setor: {
+                        id: document.getElementById('setor').value,
+                        nome: document.getElementById('setor').options[document.getElementById('setor').selectedIndex].text,
+                        sigla: document.getElementById('sigla').value
+                    },
+                    convenio: {
+                        id: document.getElementById('convenio').value,
+                        nome: document.getElementById('convenio').options[document.getElementById('convenio').selectedIndex].text,
+                        valorTitular: document.getElementById('valorTitular').value,
+                        valorDependente: document.getElementById('valorDependente').value
+                    },
+                };
+
+                // Enviar para a MockAPI
+                const apiUrl = 'https://681158503ac96f7119a447e1.mockapi.io/funcionarios';
+
+                fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro ao enviar dados');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        alert('Funcionário cadastrado com sucesso!');
+                        document.getElementById('formCadastro').reset();
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        alert('Ocorreu um erro ao cadastrar o funcionário.');
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
