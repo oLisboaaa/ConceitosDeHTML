@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Home - Cursos Culinários</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html"
+                        >Cursos Culinários</a
+                    >
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="index.html"
+                                    >Home</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="cursos.html"
+                                    >Cursos</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="container mt-4">
+            <div
+                id="carouselCursos"
+                class="carousel slide"
+                data-bs-ride="carousel"
+            >
+                <div class="carousel-indicators">
+                    <button
+                        type="button"
+                        data-bs-target="#carouselCursos"
+                        data-bs-slide-to="0"
+                        class="active"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#carouselCursos"
+                        data-bs-slide-to="1"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#carouselCursos"
+                        data-bs-slide-to="2"
+                    ></button>
+                </div>
+                <div class="carousel-inner rounded">
+                    <div class="carousel-item active">
+                        <img
+                            src="https://www.sp.senac.br/documents/20125/86544648/14046_01-01-2018.webp/43f3a724-95b2-23e0-88e6-563f51d1f094?version=1.0&t=1722357401532null&download=true"
+                            class="d-block w-100"
+                            alt="Curso 1"
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Curso de Confeitaria</h5>
+                            <p>Aprenda receitas incríveis de bolos e doces.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqocQonJG8MibguhK_1d3SsMJcQYjM-5gyeg&s"
+                            class="d-block w-100"
+                            alt="Curso 2"
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Curso de Culinária Vegana</h5>
+                            <p>Descubra pratos veganos saborosos.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmPxZ5RHcISp7YwpQtvTGhac6Liej0f1bHQ&s"
+                            class="d-block w-100"
+                            alt="Curso 3"
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Curso de Sushi</h5>
+                            <p>Domine a arte da culinária japonesa.</p>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselCursos"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselCursos"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
